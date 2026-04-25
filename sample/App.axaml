@@ -1,15 +1,26 @@
-<Application xmlns="https://github.com/avaloniaui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             x:Class="FontSubset.Avalonia.App"
-             xmlns:local="using:FontSubset.Avalonia"
-             RequestedThemeVariant="Default">
-             <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
+<Application
+    RequestedThemeVariant="Default"
+    x:Class="FontSubset.Avalonia.App"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:local="using:FontSubset.Avalonia"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!--  "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options.  -->
 
     <Application.DataTemplates>
-        <local:ViewLocator/>
+        <local:ViewLocator />
     </Application.DataTemplates>
-  
+
     <Application.Styles>
         <FluentTheme />
+
+        <Style>
+            <Style.Resources>
+                <ResourceDictionary>
+                    <!--  Overrides the default font for Fluent theme to avoid a lookup crash  -->
+                    <!--  This is better placed in a custom Style that mirrors what FluentTheme does. It will similarly be merged here.  -->
+                    <FontFamily x:Key="ContentControlThemeFontFamily">avares://FontSubset.Avalonia/Assets/Fonts#Bricolage Grotesque</FontFamily>
+                </ResourceDictionary>
+            </Style.Resources>
+        </Style>
     </Application.Styles>
 </Application>

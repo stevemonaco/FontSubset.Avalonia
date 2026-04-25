@@ -1,0 +1,22 @@
+# Emoji used in EmojiShowcaseView.axaml
+# Lines starting with # are comments; whitespace is ignored.
+# Codepoints are grouped by Unicode block for readability.
+ 
+# Misc Symbols (U+2600-U+26FF)
+☁☂☕⚠
+ 
+# Dingbats (U+2700-U+27BF)
+✅❌❤
+ 
+# Misc Symbols & Arrows (U+2B00-)
+⭐
+ 
+# Misc Symbols & Pictographs
+🌅🌧🍎🍜🎉🎯🎲🎵🏃🐒👍👏💳💻📖📚📞🔍🔔
+ 
+# Emoticons (U+1F600-U+1F64F)
+😋😍😎😞😬🙂🙅
+ 
+# Supplemental Symbols & Pictographs
+🤓🤔🤷🥗
+ 

@@ -16,9 +16,9 @@ sealed class Program
     public static AppBuilder BuildAvaloniaApp()
         => AppBuilder.Configure<App>()
             .UsePlatformDetect()
+            .ConfigureFonts(GlobalFonts.DefaultConfigureFonts)
 #if DEBUG
             .WithDeveloperTools()
 #endif
-            .WithInterFont()
             .LogToTrace();
 }

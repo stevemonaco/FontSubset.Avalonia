@@ -1,20 +1,165 @@
-<Window xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:vm="using:FontSubset.Avalonia.ViewModels"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-        x:Class="FontSubset.Avalonia.Views.MainWindow"
-        x:DataType="vm:MainWindowViewModel"
-        Icon="/Assets/avalonia-logo.ico"
-        Title="FontSubset.Avalonia">
+<Window
+    Icon="/Assets/avalonia-logo.ico"
+    Title="FontSubset.Avalonia"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d"
+    x:Class="FontSubset.Avalonia.Views.MainWindow"
+    x:DataType="vm:MainWindowViewModel"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:FontSubset.Avalonia.ViewModels"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <Design.DataContext>
-        <!-- This only sets the DataContext for the previewer in an IDE,
-             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
-        <vm:MainWindowViewModel/>
+        <!--
+            This only sets the DataContext for the previewer in an IDE,
+            to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs)
+        -->
+        <vm:MainWindowViewModel />
     </Design.DataContext>
 
-    <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    <ScrollViewer Padding="24">
+        <StackPanel
+            HorizontalAlignment="Center"
+            MaxWidth="640"
+            Spacing="20">
+
+            <!--  Header  -->
+            <StackPanel Spacing="4">
+                <TextBlock
+                    FontSize="24"
+                    FontWeight="SemiBold"
+                    Text="Emoji Fallback Showcase" />
+                <TextBlock
+                    FontSize="13"
+                    Opacity="0.7"
+                    Text="Sample copy used to verify NotoColorEmoji renders alongside the app's primary font."
+                    TextWrapping="Wrap" />
+            </StackPanel>
+
+            <Separator />
+
+            <!--  Chat-style messages  -->
+            <StackPanel Spacing="12">
+                <TextBlock
+                    FontSize="16"
+                    FontWeight="SemiBold"
+                    Text="Direct Messages" />
+
+                <Border
+                    Background="#22808080"
+                    CornerRadius="8"
+                    Padding="12">
+                    <StackPanel Spacing="2">
+                        <TextBlock
+                            FontSize="11"
+                            Opacity="0.6"
+                            Text="Sam · 9:41 AM" />
+                        <TextBlock Text="hey are we still on for lunch tomorrow? 🙂 i was thinking that new ramen place by the office, heard it's amazing 🍜" TextWrapping="Wrap" />
+                    </StackPanel>
+                </Border>
+
+                <Border
+                    Background="#22808080"
+                    CornerRadius="8"
+                    Padding="12">
+                    <StackPanel Spacing="2">
+                        <TextBlock
+                            FontSize="11"
+                            Opacity="0.6"
+                            Text="You · 9:43 AM" />
+                        <TextBlock Text="yes!! 😋 i've been wanting to try it forever. 12:30 work? ☕" TextWrapping="Wrap" />
+                    </StackPanel>
+                </Border>
+
+                <Border
+                    Background="#22808080"
+                    CornerRadius="8"
+                    Padding="12">
+                    <StackPanel Spacing="2">
+                        <TextBlock
+                            FontSize="11"
+                            Opacity="0.6"
+                            Text="Sam · 9:44 AM" />
+                        <TextBlock Text="perfect 👍 i'll book a table. also bringing a friend if that's cool — you'll like them, very into board games and bad puns 🎲" TextWrapping="Wrap" />
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+
+            <Separator />
+
+            <!--  Long-form post  -->
+            <StackPanel Spacing="8">
+                <TextBlock
+                    FontSize="16"
+                    FontWeight="SemiBold"
+                    Text="Travel Journal" />
+                <TextBlock
+                    LineHeight="22"
+                    Text="Day three in Kyoto and I'm completely smitten 😍. Started the morning at a tiny coffee shop near the river ☕ where the owner has been making pour-overs for thirty-seven years. He told me, in carefully measured English, that the water matters more than the beans 🤔 — a claim I'm still chewing on. Walked nearly fifteen kilometers through the bamboo grove and up to the monkey park 🐒, where a particularly bold macaque tried to negotiate with me for a piece of fruit 🍎. I declined, politely. The afternoon clouded over ☁ but the rain held off until I made it back to the inn, which felt like winning a small bet against the sky."
+                    TextWrapping="Wrap" />
+            </StackPanel>
+
+            <Separator />
+
+            <!--  Notification list  -->
+            <StackPanel Spacing="8">
+                <TextBlock
+                    FontSize="16"
+                    FontWeight="SemiBold"
+                    Text="Notifications" />
+
+                <TextBlock Text="🔔 Build #4827 finished successfully. All tests passed ✅" TextWrapping="Wrap" />
+                <TextBlock Text="⚠ Disk usage on production-db is at 87%. Consider cleanup soon." TextWrapping="Wrap" />
+                <TextBlock Text="❤ Three people liked your post about the new keyboard layout 🤓" TextWrapping="Wrap" />
+                <TextBlock Text="🎉 Congrats! You completed the &quot;30 Days of Reading&quot; challenge 📚" TextWrapping="Wrap" />
+                <TextBlock Text="❌ Payment to Streaming Service Inc. failed. Please update your card 💳" TextWrapping="Wrap" />
+                <TextBlock Text="🌧 Rain expected this afternoon — grab an umbrella ☂ if you're heading out." TextWrapping="Wrap" />
+            </StackPanel>
+
+            <Separator />
+
+            <!--  Mixed prose paragraph  -->
+            <StackPanel Spacing="8">
+                <TextBlock
+                    FontSize="16"
+                    FontWeight="SemiBold"
+                    Text="Product Review" />
+                <TextBlock
+                    LineHeight="22"
+                    Text="I've owned this espresso machine for about six months now and honestly? 🤷 mixed feelings. The build quality is genuinely excellent — solid metal, satisfying clicks, the kind of thing that feels like it'll outlast me 😎. Pulls beautiful shots when it's behaving. The catch is that it's *temperamental*. Some mornings it sings 🎵; others it sulks for no reason I can identify, producing a sad trickle of lukewarm brown water 😞. Customer support has been great 👏 — they replaced a faulty solenoid for free — but I shouldn't be on a first-name basis with the support team after half a year. Three stars ⭐⭐⭐. Would I buy it again? Probably 🤔. Would I recommend it to a friend who isn't a tinkerer? Absolutely not 🙅."
+                    TextWrapping="Wrap" />
+            </StackPanel>
+
+            <Separator />
+
+            <!--  Tasteful list with emoji prefixes  -->
+            <StackPanel Spacing="8">
+                <TextBlock
+                    FontSize="16"
+                    FontWeight="SemiBold"
+                    Text="Today's Plan" />
+                <TextBlock Text="🌅 6:30  — Run along the waterfront, hopefully before it gets too warm" TextWrapping="Wrap" />
+                <TextBlock Text="☕ 8:00  — Coffee and inbox triage" TextWrapping="Wrap" />
+                <TextBlock Text="💻 9:00  — Deep work block, no meetings, phone in another room" TextWrapping="Wrap" />
+                <TextBlock Text="🥗 12:30 — Lunch with Sam (ramen, see above)" TextWrapping="Wrap" />
+                <TextBlock Text="📞 14:00 — Quarterly review call, dreading slightly 😬" TextWrapping="Wrap" />
+                <TextBlock Text="🏃 17:30 — Pick up groceries, attempt to make dinner" TextWrapping="Wrap" />
+                <TextBlock Text="📖 21:00 — Read until sleepy. Currently halfway through that mystery novel 🔍" TextWrapping="Wrap" />
+            </StackPanel>
+
+            <Separator />
+
+            <!--  Closing flavor text  -->
+            <TextBlock
+                FontStyle="Italic"
+                Opacity="0.7"
+                Text="If everything above renders with a mix of crisp text and full-color emoji, the fallback chain is doing its job 🎯. If you see empty boxes □ or monochrome glyphs where color is expected, the subset is missing those codepoints — add them to emoji_samples.txt and regenerate."
+                TextWrapping="Wrap" />
+
+        </StackPanel>
+    </ScrollViewer>
 
 </Window>
